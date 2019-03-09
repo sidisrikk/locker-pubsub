@@ -1,6 +1,8 @@
 import { gql } from 'apollo-server';
 import { testTypeDef, testResolver, testTypeName } from './query/test';
 import { lockerTypeDef, lockerResolver, lockerTypeName } from './subscription/lockerInfo';
+import { paymentMutationTypeDef, paymentMutationResolver, paymentMutationTypeName } from './mutation/reserveUnit';
+
 
 const typeDefs = [
   gql`
@@ -9,6 +11,12 @@ const typeDefs = [
     }
   `,
   testTypeDef,
+  gql`
+    type Mutation {
+      reserveUnit(locker_no: Int!, unit_no: Int!, credit: Int!): ${paymentMutationTypeName}
+    }
+  `,
+  paymentMutationTypeDef,
   gql`
     type Subscription {
       sample: Float
@@ -26,6 +34,9 @@ const resolvers = {
     'lockerInfo': {
       'subscribe': lockerResolver,
     },
+  },
+  'Mutation': {
+    'reserveUnit': paymentMutationResolver,
   },
 };
 
