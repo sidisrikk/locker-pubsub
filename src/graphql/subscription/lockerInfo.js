@@ -37,25 +37,25 @@ const resolver = withFilter(
 export { resolver as lockerResolver, typeDef as lockerTypeDef, typeName as lockerTypeName };
 
 
-// manual pu test
-setInterval(() => {
-  const no = Math.round(Math.random()) + 1;
-  const code = genPasscode();
-  console.log(`pub :${no} ${code}`);
-  pubsub.publish(TOPIC_LOCK_INFO, {
-    'lockerInfo': {
-      no,
-      'unit': [
-        {
-          'no': 1,
-          'passcode': '',
-          'status': 'available',
-        }, {
-          'no': 2,
-          'passcode': code,
-          'status': 'reserved',
-        },
-      ],
-    },
-  });
-}, 2000);
+// // manual pu test
+// setInterval(() => {
+//   const no = Math.round(Math.random()) + 1;
+//   const code = genPasscode();
+//   console.log(`pub :${no} ${code}`);
+//   pubsub.publish(TOPIC_LOCK_INFO, {
+//     'lockerInfo': {
+//       no,
+//       'unit': [
+//         {
+//           'no': 1,
+//           'passcode': '',
+//           'status': 'available',
+//         }, {
+//           'no': 2,
+//           'passcode': code,
+//           'status': 'reserved',
+//         },
+//       ],
+//     },
+//   });
+// }, 2000);
