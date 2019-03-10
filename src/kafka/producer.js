@@ -1,6 +1,7 @@
 import kafka from 'kafka-node';
 
 const client = new kafka.KafkaClient({ 'kafkaHost': 'localhost:9092' });
+// TODO support more than 2 lockers, how handle
 const TOPIC = 'locker-info';
 const producer = new kafka.Producer(client);
 
