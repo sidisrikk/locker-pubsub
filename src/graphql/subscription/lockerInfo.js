@@ -17,7 +17,7 @@ const typeDef = gql`
   }
   
   type Unit{
-      unit_no: Int
+      no: Int
       passcode: String
       status: unitStatus
   }
