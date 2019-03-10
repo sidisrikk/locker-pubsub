@@ -10,6 +10,7 @@
     "esm": "^3.2.14",
     "graphql": "^14.1.1",
     "graphql-subscriptions": "^1.0.0",
+    "kafka-node": "^4.0.2",
     "sequelize": "^4.43.0",
     "sequelize-cli": "^5.4.0",
     "sqlite3": "^4.0.6"

@@ -33,18 +33,13 @@ const resolver = withFilter(
   },
 );
 
-const pubLockerInfo = (lockerNo, units) => pubsub.publish(TOPIC_LOCK_INFO, {
-  'lockerInfo': {
-    'no': lockerNo,
-    'unit': units,
-  },
-});
+const pubgqlMsg = units => pubsub.publish(TOPIC_LOCK_INFO, units);
 
 export {
   resolver as lockerResolver,
   typeDef as lockerTypeDef,
   typeName as lockerTypeName,
-  pubLockerInfo,
+  pubgqlMsg,
 };
 
 
@@ -63,7 +58,7 @@ export {
 //           'status': 'available',
 //         }, {
 //           'no': 2,
-//           'passcode': code,
+//           'passcode': code
 //           'status': 'reserved',
 //         },
 //       ],

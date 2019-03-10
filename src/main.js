@@ -1,6 +1,7 @@
 import { ApolloServer } from 'apollo-server';
 import { typeDefs, resolvers } from './graphql';
 import { sequelize } from './models/connect';
+import pubKafkaMsg from './kafka/producer';
 
 const server = new ApolloServer({ typeDefs, resolvers });
 
@@ -16,3 +17,5 @@ sequelize
 server.listen().then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`);
 });
+
+pubKafkaMsg({ 'ok': true });

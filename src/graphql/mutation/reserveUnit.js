@@ -1,7 +1,9 @@
 import { gql } from 'apollo-server';
 import genPasscode from '../../util/genPasscode';
 import { Locker } from '../../models/connect';
-import { pubLockerInfo } from '../subscription/lockerInfo';
+import { pubgqlMsg } from '../subscription/lockerInfo';
+import pubKafkaMsg from '../../kafka/producer';
+
 
 const typeName = 'paymentMutation';
 const typeDef = gql`
@@ -29,14 +31,22 @@ const resolver = async (_, variables) => {
   // update db
   await targetUnit.update({ 'passcode': code, 'status': 'reserved' });
 
-  // pub by graphQl
+  // prep data to publish
   const units = targetAllUnit.map(i => ({
     'no': i.no,
     'passcode': (i.no === variables.unit_no) ? code : i.passcode,
     'status': (i.no === variables.unit_no) ? 'reserved' : i.status,
   }));
-  pubLockerInfo(variables.locker_no, units);
-  // TODO pub kafka
+  const msg = {
+    'lockerInfo': {
+      'no': variables.locker_no,
+      'unit': units,
+    },
+  };
+  // publish
+  pubgqlMsg(msg);
+  pubKafkaMsg(msg);
+
 
   return {
     'ok': true,
