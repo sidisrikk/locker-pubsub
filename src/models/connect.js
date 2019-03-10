@@ -1,6 +1,6 @@
 import Sequelize from 'sequelize';
 
-const sequelize = new Sequelize('sqlite:database.sqlite');
+const sequelize = new Sequelize('sqlite:database.sqlite', { 'logging': false });
 
 // define Models
 const Unit = sequelize.define('unit', {
@@ -29,7 +29,7 @@ const Locker = sequelize.define('locker', {
 });
 Locker.hasMany(Unit);
 
-sequelize.sync({ 'logging': false }).then(() => {
+sequelize.sync().then(() => {
   console.log('sync ok.');
 }).catch((err) => {
   console.log(`sync fail : ${err}`);
