@@ -24,7 +24,7 @@ const resolver = async (_, variables) => {
     };
   }
 
-  const code = genPasscode();TOPIC_LOCK_INFO
+  const code = genPasscode();
   console.log(`new passcode : ${code} to Locker ${variables.locker_no} Unit ${variables.unit_no}`);
   // update db
   await targetUnit.update({ 'passcode': code, 'status': 'reserved' });
