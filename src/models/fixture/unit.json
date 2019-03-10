@@ -1,0 +1,98 @@
+[
+  {
+    "passcode": "",
+    "no": 1,
+    "status": "available",
+    "lockerNo": 1,
+    "firstPricePerHour": 50,
+    "laterPricePerHour": 25
+  },
+  {
+    "passcode": "123321",
+    "no": 2,
+    "status": "reserved",
+    "lockerNo": 1,
+    "firstPricePerHour": 100,
+    "laterPricePerHour": 50
+  },
+  {
+    "passcode": "",
+    "no": 3,
+    "status": "available",
+    "lockerNo": 1,
+    "firstPricePerHour": 200,
+    "laterPricePerHour": 100
+  },
+  {
+    "passcode": "",
+    "no": 4,
+    "status": "available",
+    "lockerNo": 1,
+    "firstPricePerHour": 50,
+    "laterPricePerHour": 25
+  },
+  {
+    "passcode": "",
+    "no": 5,
+    "status": "available",
+    "lockerNo": 1,
+    "firstPricePerHour": 100,
+    "laterPricePerHour": 50
+  },
+  {
+    "passcode": "",
+    "no": 6,
+    "status": "available",
+    "lockerNo": 1,
+    "firstPricePerHour": 200,
+    "laterPricePerHour": 100
+  },
+  {
+    "passcode": "",
+    "no": 7,
+    "status": "available",
+    "lockerNo": 1,
+    "firstPricePerHour": 50,
+    "laterPricePerHour": 25
+  },
+  {
+    "passcode": "",
+    "no": 8,
+    "status": "available",
+    "lockerNo": 1,
+    "firstPricePerHour": 100,
+    "laterPricePerHour": 50
+  },
+  {
+    "passcode": "",
+    "no": 9,
+    "status": "available",
+    "lockerNo": 1,
+    "firstPricePerHour": 200,
+    "laterPricePerHour": 100
+  },
+  {
+    "passcode": "",
+    "no": 10,
+    "status": "available",
+    "lockerNo": 1,
+    "firstPricePerHour": 50,
+    "laterPricePerHour": 25
+  },
+  {
+    "passcode": "",
+    "no": 11,
+    "status": "available",
+    "lockerNo": 1,
+    "firstPricePerHour": 100,
+    "laterPricePerHour": 50
+  },
+  {
+    "passcode": "",
+    "no": 12,
+    "status": "available",
+    "lockerNo": 1,
+    "firstPricePerHour": 200,
+    "laterPricePerHour": 100
+  }
+]
