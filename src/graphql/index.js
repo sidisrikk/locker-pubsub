@@ -3,6 +3,11 @@ import { testTypeDef, testResolver, testTypeName } from './query/test';
 import { lockerTypeDef, lockerResolver, lockerTypeName } from './subscription/lockerInfo';
 import { paymentMutationTypeDef, paymentMutationResolver, paymentMutationTypeName } from './mutation/reserveUnit';
 
+import {
+  freeUnitMutationResolver,
+  freeUnitMutationTypeDef,
+  freeUnitMutationTypeName,
+} from './mutation/freeUnit';
 
 const typeDefs = [
   gql`
@@ -14,9 +19,11 @@ const typeDefs = [
   gql`
     type Mutation {
       reserveUnit(locker_no: Int!, unit_no: Int!, credit: Int!): ${paymentMutationTypeName}
+      freeUnit(locker_no: Int!, unit_no: Int!): ${freeUnitMutationTypeName}
     }
   `,
   paymentMutationTypeDef,
+  freeUnitMutationTypeDef,
   gql`
     type Subscription {
       sample: Float
@@ -37,6 +44,7 @@ const resolvers = {
   },
   'Mutation': {
     'reserveUnit': paymentMutationResolver,
+    'freeUnit': freeUnitMutationResolver,
   },
 };
 

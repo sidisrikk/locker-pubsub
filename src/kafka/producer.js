@@ -5,18 +5,12 @@ const client = new kafka.KafkaClient({ 'kafkaHost': 'localhost:9092' });
 const TOPIC = 'locker-info';
 const producer = new kafka.Producer(client);
 
-
-const pubMsg = producer.on('ready', () => {
-//   producer.send(payloads, (err, data) => {
-//     console.log(data);
-//   });
-  console.log('producer rdy');
+producer.on('ready', () => {
+  console.log('kafka producer rdy');
 });
-
 producer.on('error', (err) => { console.log(err); });
 
 const pubKafkaMsg = (obj) => {
-  // sample msg
   const payloads = [
     { 'topic': TOPIC, 'messages': JSON.stringify(obj) },
   ];

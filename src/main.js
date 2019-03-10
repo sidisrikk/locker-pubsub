@@ -15,7 +15,7 @@ sequelize
   });
 
 server.listen().then(({ url }) => {
-  console.log(`🚀  Server ready at ${url}`);
+  console.log(`Apollo server ready at ${url}`);
 });
 
-pubKafkaMsg({ 'ok': true });
+// pubKafkaMsg({ 'ok': true });
