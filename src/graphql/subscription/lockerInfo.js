@@ -26,7 +26,7 @@ const typeDef = gql`
 const resolver = withFilter(
   () => pubsub.asyncIterator(TOPIC_LOCK_INFO),
   (payload, variables) => {
-    if (payload.lockerInfo.locker_no === parseInt(variables.lockerId, 10)) {
+    if (payload.lockerInfo.no === parseInt(variables.lockerId, 10)) {
       return true;
     }
     return false;
