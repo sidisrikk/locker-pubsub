@@ -35,8 +35,8 @@ const resolver = async (_, variables) => {
     'passcode': (i.no === variables.unit_no) ? code : i.passcode,
     'status': (i.no === variables.unit_no) ? 'reserved' : i.status,
   }));
-
   pubLockerInfo(variables.locker_no, units);
+  // TODO pub kafka
 
   return {
     'ok': true,
