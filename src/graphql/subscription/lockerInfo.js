@@ -1,6 +1,5 @@
 import { gql } from 'apollo-server';
 import { PubSub, withFilter } from 'graphql-subscriptions';
-import genPasscode from '../../util/genPasscode';
 
 const pubsub = new PubSub();
 const TOPIC_LOCK_INFO = 'lockerInfo';
@@ -34,7 +33,19 @@ const resolver = withFilter(
   },
 );
 
-export { resolver as lockerResolver, typeDef as lockerTypeDef, typeName as lockerTypeName };
+const pubLockerInfo = (lockerNo, units) => pubsub.publish(TOPIC_LOCK_INFO, {
+  'lockerInfo': {
+    'no': lockerNo,
+    'unit': units,
+  },
+});
+
+export {
+  resolver as lockerResolver,
+  typeDef as lockerTypeDef,
+  typeName as lockerTypeName,
+  pubLockerInfo,
+};
 
 
 // // manual pu test
