@@ -18,7 +18,7 @@ const typeDefs = [
   testTypeDef,
   gql`
     type Mutation {
-      reserveUnit(locker_no: Int!, unit_no: Int!, credit: Int!): ${paymentMutationTypeName}
+      reserveUnit(locker_no: Int!, unit_no: Int!, credit: Int): ${paymentMutationTypeName}
       freeUnit(locker_no: Int!, unit_no: Int!): ${freeUnitMutationTypeName}
     }
   `,
