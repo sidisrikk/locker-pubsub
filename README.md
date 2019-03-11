@@ -25,7 +25,7 @@
             - /var/run/docker.sock:/var/run/docker.sock  
     ```
 
-3. test pub/sub by Terminal
+3. set initial state pub/sub by Terminal
     - run consumer
 
     ```sh
