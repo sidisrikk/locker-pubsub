@@ -14,7 +14,7 @@ sequelize
     console.error('Unable to connect to the database:', err);
   });
 
-server.listen({}).then(({ url }) => {
+server.listen().then(({ url }) => {
   console.log(`Apollo server ready at ${url}`);
 });
 
