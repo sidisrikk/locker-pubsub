@@ -37,3 +37,9 @@
     ```sh
     bin/kafka-console-producer.sh --broker-list localhost:9092 --topic locker-info
     ```
+
+    - pub first initial state, unit6-10 reserved
+
+    ```text
+    {"lockerInfo":{"no":1,"unit":[{"no":"1","passcode":"","status":"available"},{"no":"2","passcode":"","status":"available"},{"no":"3","passcode":"","status":"available"},{"no":"4","passcode":"","status":"available"},{"no":"5","passcode":"","status":"available"},{"no":"6","passcode":"799270","status":"reserved"},{"no":"7","passcode":"064463","status":"reserved"},{"no":"8","passcode":"571804","status":"reserved"},{"no":"9","passcode":"476234","status":"reserved"},{"no":"10","passcode":"644552","status":"reserved"},{"no":"11","passcode":"","status":"available"},{"no":"12","passcode":"","status":"available"}]}}
+    ```
