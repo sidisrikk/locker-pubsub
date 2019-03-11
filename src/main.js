@@ -8,13 +8,13 @@ const server = new ApolloServer({ typeDefs, resolvers });
 sequelize
   .authenticate()
   .then(() => {
-    console.log('Connection has been established successfully.');
+    console.log('db connect rdy.');
   })
   .catch((err) => {
     console.error('Unable to connect to the database:', err);
   });
 
-server.listen().then(({ url }) => {
+server.listen({}).then(({ url }) => {
   console.log(`Apollo server ready at ${url}`);
 });
 

@@ -15,7 +15,7 @@ const pubKafkaMsg = (obj) => {
     { 'topic': TOPIC, 'messages': JSON.stringify(obj) },
   ];
   producer.send(payloads, (err, data) => {
-    console.log(data);
+    // console.log(data);
   });
 };
 

@@ -30,9 +30,9 @@ const Locker = sequelize.define('locker', {
 Locker.hasMany(Unit);
 
 sequelize.sync().then(() => {
-  console.log('sync ok.');
+  console.log('db sync ok.');
 }).catch((err) => {
-  console.log(`sync fail : ${err}`);
+  console.log(`db sync fail : ${err}`);
 });
 
 export {
