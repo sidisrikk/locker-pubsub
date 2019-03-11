@@ -24,3 +24,16 @@
             volumes:
             - /var/run/docker.sock:/var/run/docker.sock  
     ```
+
+3. test pub/sub by Terminal
+    - run consumer
+
+    ```sh
+    bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic locker-info --from-beginning
+    ```
+
+    - run producer
+
+    ```sh
+    bin/kafka-console-producer.sh --broker-list localhost:9092 --topic locker-info
+    ```
