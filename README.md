@@ -1,6 +1,6 @@
 # Locker-backend
 
-## Prerequesies
+## Prerequisites
 
 1. build kafka image from [this](https://github.com/wurstmeister/kafka-docker)
 
